@@ -15,15 +15,20 @@ class _HomePageState extends State<HomePage> {
   //write data
   void writeData() {
     _myBox.put(1, 'Nadun');
+    _myBox.put(2, 'Nathash');
   }
 
   //read data
   void readData() {
     print(_myBox.get(1));
+    print(_myBox.get(2));
   }
 
   //delete data
-  void deleteData() {}
+  void deleteData() {
+    _myBox.delete(1);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,7 +51,7 @@ class _HomePageState extends State<HomePage> {
               child: const Text("Read"),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: deleteData,
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blue[200], // Set the background color
               ),
